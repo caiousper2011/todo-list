@@ -26,7 +26,7 @@
   justify-content: center;
   font-weight: var(--font-weight-bold);
   font-size: 0.875rem;
-  color: var(--gray-100);
+  color: var(--white);
   padding: calc(var(--gutter) * 2);
   border-radius: var(--shape-regular);
   cursor: pointer;

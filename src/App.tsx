@@ -8,6 +8,7 @@ import CreateTask from './components/CreateTask';
 import TasksCounter from './components/TasksCounter';
 import EmptyList from './components/EmptyList';
 import Task from './components/Task';
+import { ThemeProvider } from './hooks/useTheme';
 
 export function App() {
   const [todoList, setTodoList] = useState<ITodoItem[]>([]);
@@ -44,25 +45,27 @@ export function App() {
 
   const isTodoListEmpty = todoList.length === 0;
   return (
-    <div className={styles.container}>
-      <Header />
-      <main className={styles.mainContent}>
-        <div className={styles.mainContentContainer}>
-          <CreateTask onCreateNewTask={handleCreateNewTask} />
-          <div className={styles.tasksContainer}>
-            <TasksCounter tasks={todoList} />
-            {isTodoListEmpty && <EmptyList />}
-            {todoList.map((task) => (
-              <Task
-                key={task.id}
-                task={task}
-                onToggleCompleteTask={handleToggleCompleteTask}
-                onRemoveTask={handleRemoveTask}
-              />
-            ))}
+    <ThemeProvider>
+      <div className={styles.container}>
+        <Header />
+        <main className={styles.mainContent}>
+          <div className={styles.mainContentContainer}>
+            <CreateTask onCreateNewTask={handleCreateNewTask} />
+            <div className={styles.tasksContainer}>
+              <TasksCounter tasks={todoList} />
+              {isTodoListEmpty && <EmptyList />}
+              {todoList.map((task) => (
+                <Task
+                  key={task.id}
+                  task={task}
+                  onToggleCompleteTask={handleToggleCompleteTask}
+                  onRemoveTask={handleRemoveTask}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
