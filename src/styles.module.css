@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  background: var(--gray-600);
+}
+
+.mainContentContainer {
+  max-width: var(--max-container-width-xl);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.tasksContainer {
+  margin-top: calc(var(--gutter) * 6);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gutter) * 1.5);
+}

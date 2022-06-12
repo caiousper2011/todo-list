@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  gap: calc(var(--gutter) * 1.5);
+  align-items: flex-start;
+  padding: calc(var(--gutter) * 2);
+  background: var(--gray-500);
+  border-radius: var(--shape-regular);
+  border: solid 1px var(--gray-400);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.container > button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.container > button:hover {
+  opacity: 0.5;
+}
+
+.container > button.complete:first-child {
+  color: var(--purple-400);
+}
+
+.container > button:first-child {
+  color: var(--blue-400);
+}
+
+.container > button:last-child {
+  color: var(--gray-300);
+}
+
+.description {
+  flex: 1;
+  line-height: 22px;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.description.complete {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
